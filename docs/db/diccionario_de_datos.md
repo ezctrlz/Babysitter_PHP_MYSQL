@@ -2,7 +2,7 @@
 ## Entidades
 * ***Usuario***: Son todas aquellas personas que pueden ingresar a la plataforma por medio del login.
 * ***Admin***: Son todos los <u>usuarios</u> que pueden administrar los datos de otros usuarios, puede ver los pagos hechos entre otros usuarios, puede ver los contratos realizados.
-* ***Niñer@***: Son todos los <u>usuarios</u> que pueden poner ofrecer sus servicios añadiendo su experiencia y habilidades, tabién pueden ser contratados y ver sus pagos.
+* ***Niñer@***: Son todos los <u>usuarios</u> que pueden ofrecer sus servicios añadiendo una descripción y un valor de estos, además de un horario el cual determinará si está disponible o no, tabién pueden ser contratados y ver sus pagos.
 *  ***Cliente***: Son todos los <u>usuarios</u> que pueden contratar los servicios de los usuarios tipo <u>Niñer@</u> y buscarlos en una lista y valorarlos según su concepto.
 ## Relaciones
 * ***Contrata***: Un usuario tipo <u>Cliente</u> contrata a un usuario tipo <u>Niñer@</u>.
