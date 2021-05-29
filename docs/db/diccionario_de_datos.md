@@ -6,7 +6,7 @@
 *  ***Cliente***: Son todos los <u>usuarios</u> que pueden contratar los servicios de los usuarios tipo <u>Niñer@</u> y buscarlos en una lista y valorarlos según su concepto.
 ## Relaciones
 * ***Establece***: 
-    * <u>Descripción:</u> Establece el horario de un día de la semana.
+    * <u>Descripción:</u> Un usuario tipo <u>Niñer@</u> establece el horario de un día de la semana.
     * <u>Restricciones:</u> Solo puede tener un horario por cada día.
 * ***Contrata***: 
     * <u>Descripción:</u> Un usuario tipo <u>Cliente</u> contrata a un usuario tipo <u>Niñer@</u>.
