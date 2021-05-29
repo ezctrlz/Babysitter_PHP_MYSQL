@@ -4,6 +4,7 @@
 * ***Admin***: Son todos los <u>usuarios</u> que pueden administrar los datos de otros usuarios, puede ver los pagos hechos entre otros usuarios, puede ver los contratos realizados.
 * ***Niñer@***: Son todos los <u>usuarios</u> que pueden ofrecer sus servicios añadiendo una descripción y un valor por hora de estos, además de un horario el cual determinará si está disponible o no, tabién pueden ser contratados y ver sus pagos.
 *  ***Cliente***: Son todos los <u>usuarios</u> que pueden contratar los servicios de los usuarios tipo <u>Niñer@</u> y buscarlos en una lista y valorarlos según su concepto.
+* ***Horario***: Son las horas disponibles de un usuario tipo <u>Niñer@</u> en un día de la semana.
 ## Relaciones
 * ***Establece***: 
     * <u>Descripción:</u> Un usuario tipo <u>Niñer@</u> establece el horario de un día de la semana.
