@@ -24,7 +24,7 @@
 ## Relaciones
 * ***Establece***:
     * <u>Descripción:</u> Un usuario tipo <u>Niñer@</u> establece el horario de un día de la semana.
-    * <u>Restricciones:</u> Solo puede tener un horario por cada día.
+    * <u>Restricciones:</u> Solo puede tener 7 horarios uno por cada día de la semana.
 * ***Accede***:
     * <u>Descripción:</u> Un usuario tipo <u>Cliente</u> accede a un <u>Contrato</u> con un usuario tipo <u>Niñer@</u>.
     * <u>Restricciones:</u> Sin restricciones.
