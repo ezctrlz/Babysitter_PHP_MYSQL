@@ -18,20 +18,26 @@
 * ***Contrato***:
     * <u>Descripción:</u> Son los servicios contratados de un usuario tipo <u>Cliente</u> a un usuario tipo <u>Niñer@</u>.
     * <u>Sinónimos:</u> Trabajo, servicio.
+* ***Pago***:
+    * <u>Descripción:</u> Son los pagos a un <u>Contrato</u> realizados por un usuario tipo <u>Cliente</u>.
+    * <u>Sinónimos:</u> Transferencia, abono.
 ## Relaciones
-* ***Establece***: 
+* ***Establece***:
     * <u>Descripción:</u> Un usuario tipo <u>Niñer@</u> establece el horario de un día de la semana.
     * <u>Restricciones:</u> Solo puede tener un horario por cada día.
-* ***Accede***: 
+* ***Accede***:
     * <u>Descripción:</u> Un usuario tipo <u>Cliente</u> accede a un <u>Contrato</u> con un usuario tipo <u>Niñer@</u>.
     * <u>Restricciones:</u> Sin restricciones.
-* ***Asignado***: 
+* ***Asignado***:
     * <u>Descripción:</u> Un usuario tipo <u>Niñer@</u> es asignado a un <u>Contrato</u>.
     * <u>Restricciones:</u> Sin restricciones.
-* ***Paga***: 
-    * <u>Descripción:</u> Un usuario tipo <u>Cliente</u> paga el valor total o parcial de los servicios de un <u>Contrato</u> con un usuario tipo <u>Niñer@</u>.
+* ***Realiza***:
+    * <u>Descripción:</u> Un usuario tipo <u>Cliente</u> realiza un <u>Pago</u> por el valor total o parcial de los servicios de un <u>Contrato</u> con un usuario tipo <u>Niñer@</u>.
+    * <u>Restricciones:</u> El contrato no inicia hasta que el pago sea completado.
+* ***Tiene***:
+    * <u>Descripción:</u> Un <u>Contrato</u> tiene <u>Pagos</u> realizados por un usuario tipo <u>Cliente</u>.
     * <u>Restricciones:</u> Sin restricciones.
-* ***Termina***: 
+* ***Termina***:
     * <u>Descripción:</u> Un usuario tipo <u>Niñer@</u> termina un <u>Contrato</u> al culminar sus servicios.
     * <u>Restricciones:</u> Sin restricciones.
 * ***Califica***:
