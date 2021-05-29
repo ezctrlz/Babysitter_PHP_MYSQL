@@ -17,3 +17,6 @@
 * ***Termina***: 
     * <u>Descripción:</u> Un usuario tipo <u>Niñer@</u> termina un contrato al culminar sus servicios.
     * <u>Restricciones:</u> Sin restricciones.
+* ***Califica***:
+    * <u>Descripción:</u> Un usuario tipo <u>Cliente</u> califica el contrato terminado por un usuario tipo <u>Niñer@</u>.
+    * <u>Restricciones:</u> Solo puede calificar un trabajo a la vez.
