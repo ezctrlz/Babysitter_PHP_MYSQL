@@ -8,7 +8,7 @@ class Request {
     
     public function __construct() {
         $this->method = $_SERVER['REQUEST_METHOD'];
-        $this->uri = str_replace('?' . $_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI']);
+        $this->uri = str_replace('?' . $_SERVER['QUERY_STRING'], '', str_replace(BASE, '/', $_SERVER['REQUEST_URI']));
         $this->query = $_GET;
         $this->files = $_FILES;
         if (empty($_POST)) {

@@ -16,6 +16,7 @@ Desarrollo del proyecto planteado en el canal de:
 
 ### Pasos iniciales
 
+- Clonar el repositorio dentro de la ruta de htdocs de xampp
 - Crear la base de datos
 - Ejecutar el sql inicial para la creación de las tablas que se encuentra en el archivo "[sql/create.sql](./sql/create.sql)"
 - Configurar las variables de entorno sugeridas en el archivo "[.env.basic](./.env.basic)" y remplazar por los valores adecuados
@@ -25,6 +26,8 @@ Desarrollo del proyecto planteado en el canal de:
 Puede encontrar ejemplos de requests en el archivo "[docs/requests.http](./docs/requests.http)", los cuales los puede ejecutar con un cliente rest como [Postman](https://www.postman.com/).
 
 Si esta utilizando Visual Studio Code como editor, puede instalar la extesión [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client), desde la cual puede ejecutar los requests directamente desde el mismo archivo.
+
+_**Nota:** Recuerde que para realizar las pruebas debe agregar la ruta a la carpeta src del repositorio en los requests que realice. ejm: localhost/repo/src/api/auth/signin_
 
 ## Licencia
 
