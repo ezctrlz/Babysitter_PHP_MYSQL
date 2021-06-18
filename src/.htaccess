@@ -1,0 +1,9 @@
+RewriteEngine on
+
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Credentials true
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^api/|docs/{0,1} index.php [QSA,L]
