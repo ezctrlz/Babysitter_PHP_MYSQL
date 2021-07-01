@@ -8,7 +8,9 @@ class AuthenticationService
 {
     static public function signup($userData)
     {
-        return UserService::createUser($userData);
+        $user = UserService::createUser($userData);
+        self::createSession($user);
+        return $user;
     }
 
     static public function signin($username, $password)
@@ -19,11 +21,27 @@ class AuthenticationService
 
         if ($user) {
             if($user['password'] === md5($password)) {
-                return UserService::clearUser($user);
+                $user = UserService::clearUser($user);
+                self::createSession($user);
+                return $user;
             }
             throw new ValidationError();
             
         }
         throw new NotFoundError("User");
+    }
+
+    static public function signout()
+    {
+        Session::destroy();
+    }
+
+    static public function isLogged() {
+        return Session::e('user');
+    }
+
+    static private function createSession($user)
+    {
+        Session::s('user', $user);
     }
 }

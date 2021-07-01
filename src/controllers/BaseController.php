@@ -49,7 +49,13 @@ class BaseController
     public function run()
     {
         $finalRoute = $this->validateRoute();
-        $response = call_user_func([$this, $finalRoute['route']['action']], $finalRoute['matches']);
+        $that = $this;
+        $routeRunner = [function () use($that, $finalRoute) {
+            return call_user_func([$that, $finalRoute['route']['action']], $finalRoute['matches']);
+        }];
+        $middlewares = array_key_exists('middlewares', $finalRoute['route'])?array_merge($finalRoute['route']['middlewares'], $routeRunner):$routeRunner;
+        $middlewareRunner = new MiddlewareRunner($middlewares);
+        $response = $middlewareRunner();
         $response->send();
     }
     

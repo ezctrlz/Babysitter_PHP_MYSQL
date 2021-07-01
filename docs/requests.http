@@ -60,3 +60,12 @@ POST {{baseurl}}/api/auth/signin
 Content-Type: application/x-www-form-urlencoded
 
 username=test@test.com&password=123s456
+
+### Sign out current user
+
+GET {{baseurl}}/api/auth/signout
+
+
+### Get Current User
+
+GET {{baseurl}}/api/users/me

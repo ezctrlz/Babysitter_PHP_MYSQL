@@ -1,6 +1,11 @@
 <?php
 require_once UTILS_PATH;
 require_once SERVICES_DIR . "AuthenticationService.php";
+require_once RESPONSES_DIR . "SuccessCreationResponse.php";
+require_once RESPONSES_DIR . "BadRequestErrorResponse.php";
+require_once RESPONSES_DIR . "InternalErrorResponse.php";
+require_once RESPONSES_DIR . "NotFoundErrorResponse.php";
+require_once RESPONSES_DIR . "SuccessResponse.php";
 require_once ERRORS_DIR . "DBError.php";
 require_once ERRORS_DIR . "NotFoundError.php";
 require_once ERRORS_DIR . "ValidationError.php";
@@ -16,6 +21,11 @@ class AuthenticationController extends BaseController {
                 'pattern' => '/^\/api\/auth\/signin\/?$/',
                 'methods' => ['POST'],
                 'action' => 'signin'
+            ],
+            [
+                'pattern' => '/^\/api\/auth\/signout\/?$/',
+                'methods' => ['GET'],
+                'action' => 'signout'
             ]
         ]);
     }
@@ -31,9 +41,9 @@ class AuthenticationController extends BaseController {
         } catch (DBError $e) {
             return new BadRequestErrorResponse("DBError", $e->getMessage(), $e->getCode());
         } catch (PDOException $e) {
-            return new IternalErrorResponse("PDOException", $e->getMessage(), $e->getCode());
+            return new InternalErrorResponse("PDOException", $e->getMessage(), $e->getCode());
         } catch (Exception $e) {
-            return new IternalErrorResponse("Internal Error", $e->getMessage(), $e->getCode());
+            return new InternalErrorResponse("Internal Error", $e->getMessage(), $e->getCode());
         }
     }
 
@@ -47,9 +57,15 @@ class AuthenticationController extends BaseController {
         } catch (ValidationError $e) {
             return new BadRequestErrorResponse("Validation Error", $e->getMessage(), $e->getCode());
         } catch (PDOException $e) {
-            return new IternalErrorResponse("PDOException", $e->getMessage(), $e->getCode());
+            return new InternalErrorResponse("PDOException", $e->getMessage(), $e->getCode());
         } catch (Exception $e) {
-            return new IternalErrorResponse("InternalError", $e->getMessage(), $e->getCode());
+            return new InternalErrorResponse("InternalError", $e->getMessage(), $e->getCode());
         }
+    }
+
+    public function signout($args)
+    {
+        AuthenticationService::signout();
+        return new SuccessResponse(["message" => "Signed Out"]);
     }
 }
