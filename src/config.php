@@ -26,6 +26,7 @@ define('SERVICES_DIR', __DIR__ . "/services/");
 define('MIDDLEWARES_DIR', __DIR__ . "/middlewares/");
 define('ERRORS_DIR', __DIR__ . "/errors/");
 define('RESPONSES_DIR', __DIR__ . "/responses/");
+define('UPLOADS_DIR', __DIR__ . "/uploads/");
 define('UTILS_PATH', __DIR__ . "/utils.php");
 define('DB_NAME', getenv('DB_NAME')?:'baby_sitter');
 define('DB_HOST', getenv('DB_HOST')?:'localhost');

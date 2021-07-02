@@ -7,6 +7,7 @@ require_once RESPONSES_DIR . "InternalErrorResponse.php";
 require_once RESPONSES_DIR . "NotFoundErrorResponse.php";
 require_once RESPONSES_DIR . "SuccessResponse.php";
 require_once ERRORS_DIR . "DBError.php";
+require_once ERRORS_DIR . "UploadFileError.php";
 require_once ERRORS_DIR . "NotFoundError.php";
 require_once ERRORS_DIR . "ValidationError.php";
 class AuthenticationController extends BaseController {
@@ -40,6 +41,8 @@ class AuthenticationController extends BaseController {
             return new SuccessCreationResponse(["user" => $user]);
         } catch (DBError $e) {
             return new BadRequestErrorResponse("DBError", $e->getMessage(), $e->getCode());
+        } catch (UploadFileError $e) {
+            return new BadRequestErrorResponse("UploadFileError", $e->getMessage(), $e->getCode());
         } catch (PDOException $e) {
             return new InternalErrorResponse("PDOException", $e->getMessage(), $e->getCode());
         } catch (Exception $e) {

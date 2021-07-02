@@ -1,12 +1,12 @@
 <?php
 require_once MODELS_DIR . "UserModel.php";
+require_once SERVICES_DIR . "FileService.php";
 
 class UserService {
     static public function createUser($userData)
     {
         if (!empty($userData['image'])) {
-            // TODO: Save image
-            $userData['imageUrl'] = '';
+            $userData['imageUrl'] = FileService::saveFile($userData['image'], "profile/");
         }
 
         $userModel = new UserModel();
